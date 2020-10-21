@@ -1,7 +1,7 @@
 package training.metofficeweather;
 import java.util.ArrayList;
 public class ForecastResponse {
-        private String cod;
+       /* private String cod;
         private Double message;
         private City city;
         private Integer cnt;
@@ -45,6 +45,6 @@ public class ForecastResponse {
 
         public void setList(java.util.List<Forecast> list) {
             this.list = list;
-        }
+        }*/
 
     }
