@@ -7,7 +7,7 @@ import javax.ws.rs.client.ClientBuilder;
 
 public class Main {
 
-    private String apiKey = "0f6a1d47-e487-4c1f-9e9c-6e5bb230508b";
+    private static Object apiKey = "0f6a1d47-e487-4c1f-9e9c-6e5bb230508b";
 
     public static void main(String args[]) {
         Client client = ClientBuilder.newBuilder().register(JacksonFeature.class).build();
@@ -16,11 +16,11 @@ public class Main {
                 .queryParam("mode", "json")
                 .queryParam("units", "metric")
                 .queryParam("appid", apiKey);
-          
-          
-    public ForecastResponse getForecast(String place) {
-        return target.queryParam("q", place)
-                .request(MediaType.APPLICATION_JSON)
-                .get(ForecastResponse.class);
     }
 
+//    public ForecastResponse getForecast(String place) {
+//        return target.queryParam("q", place)
+//                .request(MediaType.APPLICATION_JSON)
+//                .get(ForecastResponse.class);
+//    }
+}

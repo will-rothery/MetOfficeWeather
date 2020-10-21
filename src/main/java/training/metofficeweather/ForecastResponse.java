@@ -1,50 +1,73 @@
 package training.metofficeweather;
 import java.util.ArrayList;
+
 public class ForecastResponse {
-        private String cod;
-        private Double message;
-        private City city;
-        private Integer cnt;
-        private java.util.List<Forecast> list = new ArrayList<>();
+        private double elevation;
+        private int id;
+        private double latitude;
+        private double longitude;
+        private String name;
+        private String region;
+        private String unitaryAuthArea;
 
-        public String getCod() {
-            return cod;
+        private java.util.List<Forecast> list = new ArrayList<>(); // need to create forecast class
+
+
+        public double getElevation() {
+            return elevation;
         }
 
-        public void setCod(String cod) {
-            this.cod = cod;
+        public void setElevation() {
+            this.elevation = elevation;
         }
 
-        public Double getMessage() {
-            return message;
+        public int getId() {
+            return id;
         }
 
-        public void setMessage(Double message) {
-            this.message = message;
+        public void setId() {
+            this.id = id;
         }
 
-        public City getCity() {
-            return city;
+        public double getLatitude() {
+            return latitude;
         }
 
-        public void setCity(City city) {
-            this.city = city;
+        public void setLatitude() {
+            this.latitude = latitude;
         }
 
-        public Integer getCnt() {
-            return cnt;
+        public double getLongitude() {
+        return longitude;
         }
 
-        public void setCnt(Integer cnt) {
-            this.cnt = cnt;
+        public void setLongitude() {
+        this.longitude = longitude;
         }
 
-        public java.util.List<Forecast> getList() {
-            return list;
+        public String getName() {
+            return name;
         }
 
-        public void setList(java.util.List<Forecast> list) {
-            this.list = list;
+        public void setName() {
+            this.name = name;
         }
+
+        public String getRegion() {
+            return region;
+        }
+
+        public void setRegion() {
+            this.region = region;
+        }
+
+        public String getUnitaryAuthArea() {
+            return unitaryAuthArea;
+        }
+
+        public void setUnitaryAuthArea() {
+            this.unitaryAuthArea = unitaryAuthArea;
+        }
+
 
     }
