@@ -15,7 +15,12 @@ public class Main {
                 .queryParam("cnt", "10")
                 .queryParam("mode", "json")
                 .queryParam("units", "metric")
-                .queryParam("appid", apiKey)
-        ;
+                .queryParam("appid", apiKey);
+          
+          
+    public ForecastResponse getForecast(String place) {
+        return target.queryParam("q", place)
+                .request(MediaType.APPLICATION_JSON)
+                .get(ForecastResponse.class);
     }
-}
+
