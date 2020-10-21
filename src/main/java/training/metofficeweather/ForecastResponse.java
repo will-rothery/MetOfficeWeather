@@ -2,6 +2,7 @@ package training.metofficeweather;
 import java.util.ArrayList;
 
 public class ForecastResponse {
+
         private double elevation;
         private int id;
         private double latitude;
@@ -60,7 +61,7 @@ public class ForecastResponse {
         public void setRegion() {
             this.region = region;
         }
-
+        
         public String getUnitaryAuthArea() {
             return unitaryAuthArea;
         }
@@ -69,5 +70,7 @@ public class ForecastResponse {
             this.unitaryAuthArea = unitaryAuthArea;
         }
 
-
+        public void setList(java.util.List<Forecast> list) {
+            this.list = list;
+        }
     }
