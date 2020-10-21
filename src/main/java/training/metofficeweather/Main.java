@@ -8,7 +8,6 @@ import javax.ws.rs.client.Invocation;
 import javax.ws.rs.client.WebTarget;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
-import java.util.Scanner;
 
 public class Main {
 
@@ -17,30 +16,17 @@ public class Main {
 
     public static void main(String args[]) {
 
-        Scanner input = new Scanner(System.in);
-        String placeName = "";
-        placeName = input.nextLine();
-
         Client client = ClientBuilder.newBuilder().register(JacksonFeature.class).build();
-        WebTarget webTarget = client.target("http://datapoint.metoffice.gov.uk/public/data/val/wxfcs/all/json/sitelist?key=84ef00c5-4ca1-4998-b63e-771312586900")
-                .queryParam("cnt", "10")
-                .queryParam("mode", "json")
-                .queryParam("units", "metric")
-                .queryParam("appid", "84ef00c5-4ca1-4998-b63e-771312586900");
+        WebTarget webTarget = client.target("http://datapoint.metoffice.gov.uk/public/data/val/wxfcs/all/json/sitelist")
+                .queryParam("key", apiKey);
 
-        Invocation.Builder invocationBuilder =
-                webTarget.request(MediaType.APPLICATION_JSON);
-        invocationBuilder.header("some-header", "true");
+        Invocation.Builder invocationBuilder = webTarget.request(MediaType.APPLICATION_JSON);
 
-        Response response = invocationBuilder.get();
+        Response jsonObjects = invocationBuilder.get();
+        Root root = jsonObjects.readEntity(Root.class);
+        Locations locations = root.getLocations();
+        Location[] locationsList = locations.getLocations();
 
-        System.out.println(response.getStatus());
-        System.out.println(response.readEntity(String.class));
-
-        /*public ForecastResponse getForecast(String place) {
-            return target.queryParam("q", place)
-                    .request(MediaType.APPLICATION_JSON)
-                    .get(ForecastResponse.class);
-        }*/
+        System.out.println(locationsList[0].getName());
     }
-}	
+}
