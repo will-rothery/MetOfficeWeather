@@ -10,6 +10,10 @@ import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
 
 public class Main {
+
+    private static Object apiKey = "0f6a1d47-e487-4c1f-9e9c-6e5bb230508b";
+
+
     public static void main(String args[]) {
 
         Client client = ClientBuilder.newBuilder().register(JacksonFeature.class).build();
