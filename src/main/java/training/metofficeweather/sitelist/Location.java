@@ -68,4 +68,16 @@ public class Location {
         this.unitaryAuthArea = unitaryAuthArea;
     }
 
+    @Override
+    public String toString() {
+        return "Location{" +
+                "elevation='" + elevation + '\'' +
+                ", id='" + id + '\'' +
+                ", latitude='" + latitude + '\'' +
+                ", longitude='" + longitude + '\'' +
+                ", name='" + name + '\'' +
+                ", region='" + region + '\'' +
+                ", unitaryAuthArea='" + unitaryAuthArea + '\'' +
+                '}';
+    }
 }

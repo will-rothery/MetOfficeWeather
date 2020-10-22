@@ -12,7 +12,24 @@
         <div layout:fragment="content" class="container body-content">
             <h2>Weather Information</h2>
             <div>
-                <p>You entered location id <span th:text="${weatherInfo.locationId}"></span></p>
+                <p>You entered location id: <span th:each, th:text="${weatherInfo.locationId}"></span></p>
+                <table>
+                    <thead>
+                        <tr>
+                            <th th:text="#{msgs.headers.name}">Name</th>
+                            <th th:text="#{msgs.headers.value}">Value</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>ID<td th:text="${weatherInfo.locationId}"></td></tr>
+                        <tr>Elevation<td th:text="${weatherInfo.getElevation}"></td></tr>
+                        <tr>Latitude<td th:text="${weatherInfo.latitude}"></td></tr>
+                        <tr>Longitude<td th:text="${weatherInfo.longitude}"></td></tr>
+                        <tr>Location Name<td th:text="${weatherInfo.locationName}"></td></tr>
+                        <tr>Region<td th:text="${weatherInfo.region}"></td></tr>
+                        <tr>Area<td th:text="${weatherInfo.area}"></td></tr>
+                    </tbody>
+                </table>
             </div>
         </div>
     </body>
