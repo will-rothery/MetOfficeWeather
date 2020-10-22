@@ -6,6 +6,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
+import training.metofficeweather.LocationFinder;
 
 @Controller
 @EnableAutoConfiguration
@@ -18,11 +19,10 @@ public class Website {
 
     @RequestMapping("/weatherInfo")
     ModelAndView weatherInfo(@RequestParam("locationId") String locationId) {
-        return new ModelAndView("info", "weatherInfo", new WeatherInfo(locationId)) ;
+        return new ModelAndView("info", "weatherInfo", new WeatherInfo(locationId));
     }
 
     public static void main(String[] args) throws Exception {
         SpringApplication.run(Website.class, args);
     }
-
 }
