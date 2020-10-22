@@ -1,14 +1,13 @@
-package training.metofficeweather.forecast;
+package training.metofficeweather.sitelist;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import training.metofficeweather.sitelist.Locations;
 
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class SiteRep {
     @JsonProperty(value="DV")
-    private DV dv;
-    public DV getDv() {
+    private static DV dv;
+    public static DV getDv() {
         return dv;
     }
 

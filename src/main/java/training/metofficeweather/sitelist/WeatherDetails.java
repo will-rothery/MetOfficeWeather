@@ -1,10 +1,10 @@
-package training.metofficeweather.forecast;
+package training.metofficeweather.sitelist;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 @JsonIgnoreProperties(ignoreUnknown = true)
-public class REP {
+public class WeatherDetails {
     @JsonProperty(value="F")
     private String feelsLike;
     @JsonProperty(value="G")
@@ -20,11 +20,11 @@ public class REP {
     @JsonProperty(value="S")
     private String windSpeed;
     @JsonProperty(value="U")
-    private String maxUV;
+    private String maxUv;
     @JsonProperty(value="W")
     private String weatherType;
 
-    public String getFeelsLike() {
+    public static String getFeelsLike() {
         return feelsLike;
     }
 
@@ -32,7 +32,7 @@ public class REP {
         this.feelsLike = feelsLike;
     }
 
-    public String getWindGust() {
+    public static String getWindGust() {
         return windGust;
     }
 
@@ -40,7 +40,7 @@ public class REP {
         this.windGust = windGust;
     }
 
-    public String getRelativeHumidity() {
+    public static String getRelativeHumidity() {
         return relativeHumidity;
     }
 
@@ -48,7 +48,7 @@ public class REP {
         this.relativeHumidity = relativeHumidity;
     }
 
-    public String getTemperature() {
+    public static String getTemperature() {
         return temperature;
     }
 
@@ -56,7 +56,7 @@ public class REP {
         this.temperature = temperature;
     }
 
-    public String getVisibility() {
+    public static String getVisibility() {
         return visibility;
     }
 
@@ -64,7 +64,7 @@ public class REP {
         this.visibility = visibility;
     }
 
-    public String getWindDirection() {
+    public static String getWindDirection() {
         return windDirection;
     }
 
@@ -72,7 +72,7 @@ public class REP {
         this.windDirection = windDirection;
     }
 
-    public String getWindSpeed() {
+    public static String getWindSpeed() {
         return windSpeed;
     }
 
@@ -80,15 +80,15 @@ public class REP {
         this.windSpeed = windSpeed;
     }
 
-    public String getMaxUV() {
-        return maxUV;
+    public static String getMaxUv() {
+        return maxUv;
     }
 
-    public void setMaxUV(String maxUV) {
-        this.maxUV = maxUV;
+    public void setMaxUv(String maxUV) {
+        this.maxUv = maxUv;
     }
 
-    public String getWeatherType() {
+    public static String getWeatherType() {
         return weatherType;
     }
 

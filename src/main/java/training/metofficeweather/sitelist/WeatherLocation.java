@@ -1,16 +1,20 @@
 package training.metofficeweather.sitelist;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.fasterxml.jackson.annotation.JsonProperty;
 
 @JsonIgnoreProperties(ignoreUnknown = true)
-public class Location {
+public class WeatherLocation {
     private String elevation;
     private String id;
     private String latitude;
     private String longitude;
     private String name;
-    private String region;
-    private String unitaryAuthArea;
+    private String country;
+    private String continent;
+
+    @JsonProperty(value="Period")
+    private training.metofficeweather.sitelist.Period[] period;
 
     public String getElevation() {
         return elevation;
@@ -32,16 +36,16 @@ public class Location {
         return latitude;
     }
 
-    public void setLatitude(String latitude) {
-        this.latitude = latitude;
+    public void setLatitude(String lat) {
+        this.latitude = lat;
     }
 
     public String getLongitude() {
         return longitude;
     }
 
-    public void setLongitude(String longitude) {
-        this.longitude = longitude;
+    public void setLongitude(String lon) {
+        this.longitude = lon;
     }
 
     public String getName() {
@@ -52,20 +56,28 @@ public class Location {
         this.name = name;
     }
 
-    public String getRegion() {
-        return region;
+    public String getCountry() {
+        return country;
     }
 
-    public void setRegion(String region) {
-        this.region = region;
+    public void setCountry(String country) {
+        this.country = country;
     }
 
-    public String getUnitaryAuthArea() {
-        return unitaryAuthArea;
+    public String getContinent() {
+        return continent;
     }
 
-    public void setUnitaryAuthArea(String unitaryAuthArea) {
-        this.unitaryAuthArea = unitaryAuthArea;
+    public void setContinent(String continent) {
+        this.continent = continent;
+    }
+
+    public training.metofficeweather.sitelist.Period[] getPeriod() {
+        return period;
+    }
+
+    public void setPeriod(training.metofficeweather.sitelist.Period[] period) {
+        this.period = period;
     }
 
     @Override
@@ -76,8 +88,9 @@ public class Location {
                 ", latitude='" + latitude + '\'' +
                 ", longitude='" + longitude + '\'' +
                 ", name='" + name + '\'' +
-                ", region='" + region + '\'' +
-                ", unitaryAuthArea='" + unitaryAuthArea + '\'' +
+                ", country='" + country + '\'' +
+                ", continent='" + continent + '\'' +
+                ", period='" + period + '\'' +
                 '}';
     }
 }
