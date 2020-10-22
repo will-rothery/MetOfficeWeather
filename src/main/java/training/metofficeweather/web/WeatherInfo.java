@@ -1,56 +1,35 @@
 package training.metofficeweather.web;
 
-import org.glassfish.jersey.jackson.JacksonFeature;
-
-import training.metofficeweather.sitelist.Locations;
-import training.metofficeweather.sitelist.Root;
-import training.metofficeweather.sitelist.WeatherLocation;
-
-import javax.ws.rs.client.Client;
-import javax.ws.rs.client.ClientBuilder;
-import javax.ws.rs.client.Invocation;
-import javax.ws.rs.client.WebTarget;
-import javax.ws.rs.core.MediaType;
-import javax.ws.rs.core.Response;
-
 
 public class WeatherInfo {
     private final String locationId;
+    private final String relativeHumidity;
+    private final String temperature;
+    private final String visibility;
+    private final String windDirection;
+    private final String windSpeed;
+    private final String maxUv;
+    private final String weatherType;
 
-    public WeatherInfo(String locationId) {
+    public WeatherInfo(String locationId, String relativeHumidity, String temperature, String visibility, String windDirection, String windSpeed, String maxUv, String weatherType) {
         this.locationId = locationId;
-
-
-        Object apiKey = "0f6a1d47-e487-4c1f-9e9c-6e5bb230508b";
-
-        Client client = ClientBuilder.newBuilder().register(JacksonFeature.class).build();
-
-
-        WebTarget webTarget = client.target("http://datapoint.metoffice.gov.uk/public/data/val/wxfcs/all/json/sitelist")
-                .queryParam("key", apiKey);
-
-        Invocation.Builder invocationBuilder = webTarget.request(MediaType.APPLICATION_JSON);
-
-        Response jsonObjects = invocationBuilder.get();
-        Root root = jsonObjects.readEntity(Root.class);
-        Locations locations = root.getLocations();
-        WeatherLocation[] locationsList = locations.getLocations();
-        String iD = getLocationId();
-
-        for (WeatherLocation location : locationsList) {
-            if (locationId.equalsIgnoreCase(location.getId())) {
-                System.out.println("Elevation: " + location.getElevation());
-                System.out.println("ID: " + location.getId());
-                System.out.println("Latitude: " + location.getLatitude());
-                System.out.println("Longitude: " + location.getLongitude());
-                System.out.println("Location name: " + location.getName());
-                System.out.println("Region: " + location.getCountry());
-                System.out.println("Area: " + location.getContinent());
-            }
-        }
+        this.relativeHumidity = relativeHumidity;
+        this.temperature = temperature;
+        this.visibility = visibility;
+        this.windDirection = windDirection;
+        this.windSpeed = windSpeed;
+        this.maxUv = maxUv;
+        this.weatherType = weatherType;
     }
 
-    public String getLocationId() {
+    public String fullWeatherInfo() {
         return locationId;
+        return relativeHumidity;
+        return temperature;
+        return visibility;
+        return windDirection;
+        return windSpeed;
+        return maxUv;
+        return weatherType;
     }
 }
