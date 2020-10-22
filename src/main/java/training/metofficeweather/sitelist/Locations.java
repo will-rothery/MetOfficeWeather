@@ -1,11 +1,8 @@
-package training.metofficeweather;
+package training.metofficeweather.sitelist;
 
-import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
-@JsonIgnoreProperties(ignoreUnknown = true)
 public class Locations {
-
     @JsonProperty(value="Location")
     private Location[] locations;
 
@@ -16,6 +13,4 @@ public class Locations {
     public void setLocations(Location[] locations) {
         this.locations = locations;
     }
-
 }
-
