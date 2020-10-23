@@ -30,6 +30,7 @@ public class WeatherByLocation {
         Response jsonObjects = invocationBuilder.get(); // stores object from GET request
         ForecastRoot root = jsonObjects.readEntity(ForecastRoot.class); // reads object inside the root
         SiteRep siteRep = root.getSiteRep(); // reads objects inside the object that's inside the root
+        // feel like this is gonna need an extra couple of lines here
         WeatherDetails[] weatherDetails = Period.getWeatherDetails(); // stores the objects in a list
 
 

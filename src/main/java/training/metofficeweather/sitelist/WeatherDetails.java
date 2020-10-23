@@ -6,7 +6,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class WeatherDetails {
     @JsonProperty(value="F")
-    private static String feelsLike;
+    private String feelsLike;
     @JsonProperty(value="G")
     private static String windGust;
     @JsonProperty(value="H")

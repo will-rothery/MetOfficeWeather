@@ -26,13 +26,11 @@ public class Website {
     // when weatherInfo is called, will look up the location ID and hopefully return all of these parameters
     @RequestMapping("/weatherInfo")
     ModelAndView weatherInfo(@RequestParam("locationId") String locationId) {
-        return new ModelAndView("info", "weatherInfo", new WeatherInfo(locationId, relativeHumidity,
-                temperature, visibility, windDirection, windSpeed, maxUv, weatherType)) ;
+        return new ModelAndView("info", "weatherInfo", new WeatherInfo(locationId));
     }
 
     // main class for website
     public static void main(String[] args) throws Exception {
         SpringApplication.run(Website.class, args);
     }
-
 }

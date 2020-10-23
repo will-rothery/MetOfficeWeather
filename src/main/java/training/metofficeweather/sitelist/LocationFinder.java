@@ -41,7 +41,7 @@ public class LocationFinder {
             for (WeatherLocation location : locationsList) { // loops through object list
                 if (userInput.equalsIgnoreCase(location.getId())) { // searches for userInput in object list
 
-                    // prints each item of the object in the list
+                    // prints each item of the list in the object
                     System.out.println("Elevation: " + location.getElevation());
                     System.out.println("ID: " + location.getId());
                     System.out.println("Latitude: " + location.getLatitude());
