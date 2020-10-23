@@ -8,6 +8,7 @@ import javax.ws.rs.client.Invocation;
 import javax.ws.rs.client.WebTarget;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
+import javax.xml.stream.Location;
 import java.util.Scanner;
 
 
@@ -53,5 +54,9 @@ public class LocationFinder {
             }
         }
         scanner.close();
+
+
     }
+
+
 }

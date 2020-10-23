@@ -5,7 +5,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 public class Period {
 
     @JsonProperty(value = "Rep")
-    private static WeatherDetails[] weatherDetails;
+    private static Rep[] weatherDetails;
     private String type;
     private String value;
 
@@ -32,11 +32,11 @@ public class Period {
 
     // this looks important though
 
-    public static WeatherDetails[] getWeatherDetails() {
+    public static Rep[] getWeatherDetails() {
         return weatherDetails;
     }
 
-    public void setWeatherDetails(WeatherDetails[] weatherDetails) {
+    public void setWeatherDetails(Rep[] weatherDetails) {
         this.weatherDetails = weatherDetails;
     }
 }

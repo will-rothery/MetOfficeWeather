@@ -9,7 +9,7 @@ public class SiteRep {
     private static DV dv;
 
     // not sure what DV stands for, are you able to rename?
-    public static DV getDv() {
+    public DV getDv() {
         return dv;
     }
 

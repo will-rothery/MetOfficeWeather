@@ -1,6 +1,5 @@
 package training.metofficeweather.sitelist;
 
-import com.fasterxml.jackson.annotation.JsonProperty;
 import org.glassfish.jersey.jackson.JacksonFeature;
 
 import javax.ws.rs.client.Client;
@@ -20,6 +19,7 @@ public class WeatherByLocation {
 
         Client client = ClientBuilder.newBuilder().register(JacksonFeature.class).build(); // build a client object
 
+
         WebTarget webTarget = client.target("http://datapoint.metoffice.gov.uk/public/data/val/wxfcs/all/json/sitelist"+index+("this.location.fortheapiaddress") // the index address was lost in the merge, are you able to fix this?
                 .queryParam("key", apiKey));
 
@@ -30,12 +30,11 @@ public class WeatherByLocation {
         Response jsonObjects = invocationBuilder.get(); // stores object from GET request
         ForecastRoot root = jsonObjects.readEntity(ForecastRoot.class); // reads object inside the root
         SiteRep siteRep = root.getSiteRep(); // reads objects inside the object that's inside the root
-        // feel like this is gonna need an extra couple of lines here
-        WeatherDetails[] weatherDetails = Period.getWeatherDetails(); // stores the objects in a list
+        Rep[] rep = Period.getWeatherDetails(); // stores the objects in a list
 
 
         // loops through objects in the weather details list and finds weather information
-        for (WeatherDetails details : weatherDetails) {
+        for (Rep details : rep) {
 
             // these all work fine, and want to be accessed in a different way -- but need the renames to be finished so i know what to reference
             System.out.println("Feels Like: " + details.getFeelsLike());
