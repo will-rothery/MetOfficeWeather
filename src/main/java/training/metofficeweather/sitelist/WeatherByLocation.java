@@ -11,31 +11,42 @@ import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
 
 public class WeatherByLocation {
+
+    // i renamed this file
     public WeatherByLocation() {
-        Object apiKey = "0f6a1d47-e487-4c1f-9e9c-6e5bb230508b";
 
-        Client client = ClientBuilder.newBuilder().register(JacksonFeature.class).build();
 
-        WebTarget webTarget = client.target("http://datapoint.metoffice.gov.uk/public/data/val/wxfcs/all/json/sitelist"+index+("this.location.fortheapiaddress")
-                .queryParam("key", apiKey);
+        Object apiKey = "0f6a1d47-e487-4c1f-9e9c-6e5bb230508b"; // key for datapoint
 
-        Invocation.Builder invocationBuilder = webTarget.request(MediaType.APPLICATION_JSON);
+        Client client = ClientBuilder.newBuilder().register(JacksonFeature.class).build(); // build a client object
 
-        Response jsonObjects = invocationBuilder.get();
-        ForecastRoot root = jsonObjects.readEntity(ForecastRoot.class);
-        SiteRep siteRep = root.getSiteRep();
-        WeatherDetails[] weatherDetails = Period.getWeatherDetails();
+        WebTarget webTarget = client.target("http://datapoint.metoffice.gov.uk/public/data/val/wxfcs/all/json/sitelist"+index+("this.location.fortheapiaddress") // the index address was lost in the merge, are you able to fix this?
+                .queryParam("key", apiKey));
 
+        Invocation.Builder invocationBuilder = webTarget.request(MediaType.APPLICATION_JSON); // HTTP GET request
+
+
+        // this is the area that is confusing me with the file names - but if they're renamed, should be able to get the weather information and store them inside the list "weatherDetails[]"
+        Response jsonObjects = invocationBuilder.get(); // stores object from GET request
+        ForecastRoot root = jsonObjects.readEntity(ForecastRoot.class); // reads object inside the root
+        SiteRep siteRep = root.getSiteRep(); // reads objects inside the object that's inside the root
+        WeatherDetails[] weatherDetails = Period.getWeatherDetails(); // stores the objects in a list
+
+
+        // loops through objects in the weather details list and finds weather information
         for (WeatherDetails details : weatherDetails) {
-            System.out.println("Feels Like: " + WeatherDetails.getFeelsLike());
-            System.out.println("Wind Gust: " + WeatherDetails.getWindGust());
-            System.out.println("Relative Humidity: " + WeatherDetails.getRelativeHumidity());
-            System.out.println("Temperature: " + WeatherDetails.getTemperature());
-            System.out.println("Visibility: " + WeatherDetails.getVisibility());
-            System.out.println("Wind Direction: " + WeatherDetails.getWindDirection());
-            System.out.println("Wind Speed: " + WeatherDetails.getWindSpeed());
-            System.out.println("Max UV: " + WeatherDetails.getMaxUv());
-            System.out.println("Weather Type: " + WeatherDetails.getWeatherType());
+
+            // these all work fine, and want to be accessed in a different way -- but need the renames to be finished so i know what to reference
+            System.out.println("Feels Like: " + details.getFeelsLike());
+            System.out.println("Wind Gust: " + details.getWindGust());
+            System.out.println("Relative Humidity: " + details.getRelativeHumidity());
+            System.out.println("Temperature: " + details.getTemperature());
+            System.out.println("Visibility: " + details.getVisibility());
+            System.out.println("Wind Direction: " + details.getWindDirection());
+            System.out.println("Wind Speed: " + details.getWindSpeed());
+            System.out.println("Max UV: " + details.getMaxUv());
+            System.out.println("Weather Type: " + details.getWeatherType());
+            System.out.println("Precipitation Probability: " + details.getPrecipitationProbability());
 
         }
     }

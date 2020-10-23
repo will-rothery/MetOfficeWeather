@@ -9,6 +9,9 @@ public class Period {
     private String type;
     private String value;
 
+    // not sure what this page is for -- julius??
+
+
 
     public String getType() {
         return type;
@@ -25,6 +28,9 @@ public class Period {
     public void setValue(String value) {
         this.value = value;
     }
+
+
+    // this looks important though
 
     public static WeatherDetails[] getWeatherDetails() {
         return weatherDetails;

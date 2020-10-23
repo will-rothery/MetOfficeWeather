@@ -7,6 +7,8 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 public class SiteRep {
     @JsonProperty(value="DV")
     private static DV dv;
+
+    // not sure what DV stands for, are you able to rename?
     public static DV getDv() {
         return dv;
     }

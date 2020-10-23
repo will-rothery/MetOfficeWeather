@@ -14,6 +14,11 @@ public class WeatherLocation {
     private String continent;
 
     @JsonProperty(value="Period")
+    // not sure what this^^ is for
+
+
+    // getters and setters for LocationFinder.java
+
     private training.metofficeweather.sitelist.Period[] period;
 
     public String getElevation() {
@@ -79,6 +84,8 @@ public class WeatherLocation {
     public void setPeriod(training.metofficeweather.sitelist.Period[] period) {
         this.period = period;
     }
+    // not sure whats going on here either, what's period?
+
 
     @Override
     public String toString() {

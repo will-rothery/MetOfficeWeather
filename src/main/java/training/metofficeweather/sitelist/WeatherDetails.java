@@ -6,23 +6,29 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class WeatherDetails {
     @JsonProperty(value="F")
-    private String feelsLike;
+    private static String feelsLike;
     @JsonProperty(value="G")
-    private String windGust;
+    private static String windGust;
     @JsonProperty(value="H")
-    private String relativeHumidity;
+    private static String relativeHumidity;
     @JsonProperty(value="T")
-    private String temperature;
+    private static String temperature;
     @JsonProperty(value="V")
-    private String visibility;
+    private static String visibility;
     @JsonProperty(value="D")
-    private String windDirection;
+    private static String windDirection;
     @JsonProperty(value="S")
-    private String windSpeed;
+    private static String windSpeed;
     @JsonProperty(value="U")
-    private String maxUv;
+    private static String maxUv;
     @JsonProperty(value="W")
-    private String weatherType;
+    private static String weatherType;
+    @JsonProperty(value="Pp")
+    private String precipitationProbability;
+
+
+    // getters and setters for WeatherByLocation.java
+
 
     public static String getFeelsLike() {
         return feelsLike;
@@ -104,8 +110,6 @@ public class WeatherDetails {
         this.precipitationProbability = precipitationProbability;
     }
 
-    @JsonProperty(value="Pp")
-    private String precipitationProbability;
 }
 
 

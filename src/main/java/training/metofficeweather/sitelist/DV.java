@@ -7,8 +7,11 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 public class DV {
     private  String dataDate;
     private String  type;
-    @JsonProperty(value="Location")
+    @JsonProperty(value="Location") // would you be able to explain what this means?
     private WeatherLocation Location;
+
+
+    // not sure what this page is for -- julius??
 
     public String getDataDate() {
         return dataDate;

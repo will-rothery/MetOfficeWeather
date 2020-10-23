@@ -21,13 +21,21 @@
                         </tr>
                     </thead>
                     <tbody>
-                        <tr>ID<td th:text="${weatherInfo.locationId}"></td></tr>
-                        <tr>Elevation<td th:text="${weatherInfo.getElevation}"></td></tr>
-                        <tr>Latitude<td th:text="${weatherInfo.latitude}"></td></tr>
-                        <tr>Longitude<td th:text="${weatherInfo.longitude}"></td></tr>
-                        <tr>Location Name<td th:text="${weatherInfo.locationName}"></td></tr>
-                        <tr>Region<td th:text="${weatherInfo.region}"></td></tr>
-                        <tr>Area<td th:text="${weatherInfo.area}"></td></tr>
+<!--                    trying to display the weather information, from the ID, in a table on this file-->
+<!--                        weatherInfo.java should contain all of this information-->
+
+                        <tr>Feels Like: <td th:text="${weatherInfo.feelsLike}"></td></tr>
+                        <tr>Wind Gust: <td th:text="${weatherInfo.windGust}"></td></tr>
+                        <tr>Relative Humidity: <td th:text="${weatherInfo.relativeHumidity}"></td></tr>
+                        <tr>Temperature: <td th:text="${weatherInfo.temperature}"></td></tr>
+                        <tr>Visibility: <td th:text="${weatherInfo.visibility}"></td></tr>
+                        <tr>Wind Direction: <td th:text="${weatherInfo.windDirection}"></td></tr>
+                        <tr>Wind Speed: <td th:text="${weatherInfo.windSpeed}"></td></tr>
+                        <tr>Max UV: <td th:text="${weatherInfo.maxUv}"></td></tr>
+                        <tr>Weather Type: <td th:text="${weatherInfo.weatherType}"></td></tr>
+                        <tr>Precipitation Probability: <td th:text="${weatherInfo.precipitationProbability"></td></tr\>
+
+
                     </tbody>
                 </table>
             </div>
