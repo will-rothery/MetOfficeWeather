@@ -5,6 +5,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class ForecastRoot {
+
     @JsonProperty(value="SiteRep")
     private SiteRep siteRep;
 
@@ -17,7 +18,4 @@ public class ForecastRoot {
     public void setSiteRep(SiteRep siteRep) {
         this.siteRep = siteRep;
     }
-
-
-
 }
