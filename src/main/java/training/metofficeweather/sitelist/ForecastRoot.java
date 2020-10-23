@@ -8,7 +8,8 @@ public class ForecastRoot {
     @JsonProperty(value="SiteRep")
     private SiteRep siteRep;
 
-    // are you able to rename siterep? i'm not sure what this refers to, sorry
+    // looks inside the root and finds rep by site
+
     public SiteRep getSiteRep() {
         return siteRep;
     }

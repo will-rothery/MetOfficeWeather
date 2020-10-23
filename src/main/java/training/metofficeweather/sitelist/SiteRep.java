@@ -8,7 +8,8 @@ public class SiteRep {
     @JsonProperty(value="DV")
     private static DV dv;
 
-    // not sure what DV stands for, are you able to rename?
+    // another link in the chain
+
     public DV getDv() {
         return dv;
     }

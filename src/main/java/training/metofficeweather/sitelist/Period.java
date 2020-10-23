@@ -5,13 +5,12 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 public class Period {
 
     @JsonProperty(value = "Rep")
-    private static Rep[] weatherDetails;
+    private Rep[] rep;
     private String type;
     private String value;
 
-    // not sure what this page is for -- julius??
 
-
+    // period contains the type, the value and the actual weather report, another link in the chain
 
     public String getType() {
         return type;
@@ -29,14 +28,11 @@ public class Period {
         this.value = value;
     }
 
-
-    // this looks important though
-
-    public static Rep[] getWeatherDetails() {
-        return weatherDetails;
+    public Rep[] getRep() {
+        return rep;
     }
 
-    public void setWeatherDetails(Rep[] weatherDetails) {
-        this.weatherDetails = weatherDetails;
+    public void setRep(Rep[] rep) {
+        this.rep = rep;
     }
 }

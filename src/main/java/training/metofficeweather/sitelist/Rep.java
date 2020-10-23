@@ -6,7 +6,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class Rep {
     @JsonProperty(value="F")
-    private String feelsLike;
+    private static String feelsLike;
     @JsonProperty(value="G")
     private static String windGust;
     @JsonProperty(value="H")
@@ -25,6 +25,7 @@ public class Rep {
     private static String weatherType;
     @JsonProperty(value="Pp")
     private String precipitationProbability;
+
 
 
     // getters and setters for WeatherByLocation.java
