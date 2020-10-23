@@ -35,4 +35,5 @@ public class Period {
     public void setRep(Rep[] rep) {
         this.rep = rep;
     }
+
 }

@@ -2,11 +2,12 @@ package training.metofficeweather.web;
 
 
 // might just set up getters for all of these, so they can be referenced in the website, and displayed on info.html
-    // job for today -- either of us really...
-// not really sure what i'm doing either, some insight would be grand
 
 public class WeatherInfo {
+
     private String locationId;
+    private String feelsLike;
+    private String windGust;
     private String relativeHumidity;
     private String temperature;
     private String visibility;
@@ -23,6 +24,22 @@ public class WeatherInfo {
 
     public void setLocationId(String locationId) {
         this.locationId = locationId;
+    }
+
+    public String getFeelsLike() {
+        return feelsLike;
+    }
+
+    public void setFeelsLike(String feelsLike) {
+        this.feelsLike = feelsLike;
+    }
+
+    public String getWindGust() {
+        return windGust;
+    }
+
+    public void setWindGust(String windGust) {
+        this.windGust = windGust;
     }
 
     public String getRelativeHumidity() {
@@ -92,6 +109,8 @@ public class WeatherInfo {
 
     public WeatherInfo(String locationId) {
         this.locationId = locationId;
+        this.feelsLike = "Feels Like: " + getFeelsLike();
+        this.windGust = "Wind Gust: " + getWindGust();
         this.relativeHumidity = "Relative Humidity: " + getRelativeHumidity();
         this.temperature = "Temperature: " + getTemperature();
         this.visibility = "Visibility: " + getVisibility();
@@ -100,17 +119,5 @@ public class WeatherInfo {
         this.maxUv = "Max UV: " + getMaxUv();
         this.weatherType = "Weather Type: " + getWeatherType();
         this.precipitationProbability = "Precipitation Probability: " + getPrecipitationProbability();
-    }
-
-    public String fullWeatherInfo() { // full weather info is never used
-        return locationId;
-        return relativeHumidity;
-        return temperature;
-        return visibility;
-        return windDirection;
-        return windSpeed;
-        return maxUv;
-        return weatherType;
-        return precipitationProbability;
     }
 }

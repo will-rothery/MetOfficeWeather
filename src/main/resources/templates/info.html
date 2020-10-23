@@ -13,31 +13,17 @@
             <h2>Weather Information</h2>
             <div>
                 <p>You entered location id: <span th:each, th:text="${weatherInfo.locationId}"></span></p>
-                <table>
-                    <thead>
-                        <tr>
-                            <th th:text="#{msgs.headers.name}">Name</th>
-                            <th th:text="#{msgs.headers.value}">Value</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-<!--                    trying to display the weather information, from the ID, in a table on this file-->
-<!--                        weatherInfo.java should contain all of this information-->
+                <p><span th:each, th:text="${weatherInfo.feelsLike}"></span></p>
+                <p><span th:each, th:text="${weatherInfo.windGust}"></span></p>
+                <p><span th:each, th:text="${weatherInfo.relativeHumidity}"></span></p>
+                <p><span th:each, th:text="${weatherInfo.temperature}"></span></p>
+                <p><span th:each, th:text="${weatherInfo.visibility}"></span></p>
+                <p><span th:each, th:text="${weatherInfo.windDirection}"></span></p>
+                <p><span th:each, th:text="${weatherInfo.windSpeed}"></span></p>
+                <p><span th:each, th:text="${weatherInfo.maxUv}"></span></p>
+                <p><span th:each, th:text="${weatherInfo.weatherType}"></span></p>
+                <p><span th:each, th:text="${weatherInfo.precipitationProbability}"></span></p>
 
-                        <tr>Feels Like: <td th:text="${weatherInfo.feelsLike}"></td></tr>
-                        <tr>Wind Gust: <td th:text="${weatherInfo.windGust}"></td></tr>
-                        <tr>Relative Humidity: <td th:text="${weatherInfo.relativeHumidity}"></td></tr>
-                        <tr>Temperature: <td th:text="${weatherInfo.temperature}"></td></tr>
-                        <tr>Visibility: <td th:text="${weatherInfo.visibility}"></td></tr>
-                        <tr>Wind Direction: <td th:text="${weatherInfo.windDirection}"></td></tr>
-                        <tr>Wind Speed: <td th:text="${weatherInfo.windSpeed}"></td></tr>
-                        <tr>Max UV: <td th:text="${weatherInfo.maxUv}"></td></tr>
-                        <tr>Weather Type: <td th:text="${weatherInfo.weatherType}"></td></tr>
-                        <tr>Precipitation Probability: <td th:text="${weatherInfo.precipitationProbability"></td></tr\>
-
-
-                    </tbody>
-                </table>
             </div>
         </div>
     </body>
